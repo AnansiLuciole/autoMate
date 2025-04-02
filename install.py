@@ -20,14 +20,14 @@ def install_requirements():
         ])
 
 
-def adjust_python_env():
-    # check if python is 3.12
-    if sys.version_info.major != 3 or sys.version_info.minor != 12:
-        print("Python version is not 3.12, please install python 3.12")
+def adjust__env():
+    # check if  is at least 3.12
+    if sys.version_info.major != 3 or sys.version_info.minor < 12:
+        print(" version is less than 3.12, please install  3.12 or higher")
         exit(1)
 
 def install():
-    adjust_python_env()
+    adjust__env()
     install_requirements()
     # download the weight files
     download_weights.download() 
@@ -35,4 +35,4 @@ def install():
 
 if __name__ == "__main__":
     install()
-    print("Installation complete!") 
+    print("Installation complete!")
